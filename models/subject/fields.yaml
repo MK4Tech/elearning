@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label:    ID
+        disabled: true
+        
+    name: 
+        label: Name
+        type:  text
+        spab:  left
+        
+    slug:
+        label:     slug
+        preset:
+            field: name
+            type:  slug 
+            span:  right 
+
+    hasParent:
+        label: 'Has Parent'
+        type:   boolean
+
+        
+

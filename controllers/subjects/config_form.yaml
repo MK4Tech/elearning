@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Subject
+
+# Model Form Field configuration
+form: $/khalil/elearning/models/subject/fields.yaml
+
+# Model Class name
+modelClass: Khalil\Elearning\Models\Subject
+
+# Default redirect location
+defaultRedirect: khalil/elearning/subjects
+
+# Create page
+create:
+    title: Create Subject
+    redirect: khalil/elearning/subjects/update/:id
+    redirectClose: khalil/elearning/subjects
+
+# Update page
+update:
+    title: Edit Subject
+    redirect: khalil/elearning/subjects
+    redirectClose: khalil/elearning/subjects
+
+# Preview page
+preview:
+    title: Preview Subject

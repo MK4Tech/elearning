@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        readOnly: true
+        spane:    left
+
+    name: 
+         label: Name
+         type:  text
+         spane: left  
+
+    slug:
+        label:     slug
+        preset:
+            field: name
+            type:  slug      
+

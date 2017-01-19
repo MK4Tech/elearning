@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Topic
+
+# Model Form Field configuration
+form: $/khalil/elearning/models/topic/fields.yaml
+
+# Model Class name
+modelClass: Khalil\Elearning\Models\Topic
+
+# Default redirect location
+defaultRedirect: khalil/elearning/topics
+
+# Create page
+create:
+    title: Create Topic
+    redirect: khalil/elearning/topics/update/:id
+    redirectClose: khalil/elearning/topics
+
+# Update page
+update:
+    title: Edit Topic
+    redirect: khalil/elearning/topics
+    redirectClose: khalil/elearning/topics
+
+# Preview page
+preview:
+    title: Preview Topic

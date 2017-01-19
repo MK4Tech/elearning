@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Course
+
+# Model Form Field configuration
+form: $/khalil/elearning/models/course/fields.yaml
+
+# Model Class name
+modelClass: Khalil\Elearning\Models\Course
+
+# Default redirect location
+defaultRedirect: khalil/elearning/courses
+
+# Create page
+create:
+    title: Create Course
+    redirect: khalil/elearning/courses/update/:id
+    redirectClose: khalil/elearning/courses
+
+# Update page
+update:
+    title: Edit Course
+    redirect: khalil/elearning/courses
+    redirectClose: khalil/elearning/courses
+
+# Preview page
+preview:
+    title: Preview Course

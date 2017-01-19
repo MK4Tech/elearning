@@ -1,0 +1,82 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:        
+   
+    level:
+        label:    'Select Level:'        
+        type:     recordfinder
+        list:     $/khalil/elearning/models/level/columns.yaml
+        prompt:   Click the %s to find the level.
+        nameFrom: name   
+        required: true
+        span:     left
+
+    subject:
+        label:    'Select Subject:'        
+        type:     recordfinder
+        list:     $/khalil/elearning/models/subject/columns.yaml
+        prompt:   Click the %s to find the subject.
+        nameFrom: name
+        required: true
+        span:     right                
+
+    name:
+        label:   'Course Name:'
+        type :    text 
+        spane:    left
+        required: true
+
+    slug:
+        label: slug
+        span:  right        
+        preset:
+            field: name
+            type:  slug 
+
+    language:
+        label: 'Course Language:'
+        type:   dropdown
+        span:   left
+
+    description:
+        label:  'Description:'
+        type :  richeditor 
+
+    # topics:
+    #     type: repeater
+    #     label: 'Add Topics:'
+    #     form:
+    #          fields:
+    #                 title:
+    #                     label: 'Topic Title:'
+    #                     type: text
+    #                 name:
+    #                     label: 'Topic Name:'
+    #                     type: text
+
+
+    # topics:                  
+    #    label: Topics
+    #    type:  partail
+    #    path:  fields_topics
+    #    tape:  Topics
+
+
+    publish:
+         label: Publish
+         type: checkbox
+         default: false
+
+
+
+
+
+
+
+
+
+
+
+

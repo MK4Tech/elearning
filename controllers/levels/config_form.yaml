@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Level
+
+# Model Form Field configuration
+form: $/khalil/elearning/models/level/fields.yaml
+
+# Model Class name
+modelClass: Khalil\Elearning\Models\Level
+
+# Default redirect location
+defaultRedirect: khalil/elearning/levels
+
+# Create page
+create:
+    title: Create Level
+    redirect: khalil/elearning/levels/update/:id
+    redirectClose: khalil/elearning/levels
+
+# Update page
+update:
+    title: Edit Level
+    redirect: khalil/elearning/levels
+    redirectClose: khalil/elearning/levels
+
+# Preview page
+preview:
+    title: Preview Level
