@@ -9,5 +9,10 @@
 1.0.3:
   - Create Lesson, Media Tables
   - create_lessons_table.php
+  - create_media_table.php
+1.0.4:
+  - Seeading All Tables
+  
+
 
 

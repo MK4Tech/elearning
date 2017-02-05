@@ -14,7 +14,7 @@ class CreateLevelsTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique()->index();            
             $table->timestamps();
-            
+           
         });
     }
 

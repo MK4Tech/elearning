@@ -14,7 +14,7 @@ class CreateLessonsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description');
-            $table->integer('watched');
+            $table->integer('watched')->default(0);
             $table->timestamps();
 
             $table->integer('topic_id')->unsigned();

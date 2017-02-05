@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/khalil/elearning/models/level/columns.yaml
+list: $/khalil/elearning/models/medium/columns.yaml
 
 # Model Class name
-modelClass: Khalil\Elearning\Models\Level
+modelClass: Khalil\Elearning\Models\Medium
 
 # List Title
-title: Manage Levels
+title: Manage Media
 
 # Link URL for each record
-recordUrl: khalil/elearning/levels/update/:id
+recordUrl: khalil/elearning/media/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -32,7 +32,7 @@ showSorting: true
 #     direction: desc
 
 # Display checkboxes next to each record
-showCheckboxes: true
+# showCheckboxes: true
 
 # Toolbar widget configuration
 toolbar:

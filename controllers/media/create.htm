@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('khalil/elearning/subjects') ?>">Subjects</a></li>
+        <li><a href="<?= Backend::url('khalil/elearning/media') ?>">Media</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -15,34 +15,30 @@
 
         <div class="form-buttons">
             <div class="loading-indicator-container">
+            
                 <button
                     type="submit"
                     data-request="onSave"
-                    data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Subject..."
+                    data-load-indicator="Creating medium..."
                     class="btn btn-primary">
-                    <u>S</u>ave
+                    Create
                 </button>
+
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Subject..."
+                    data-load-indicator="Creating medium..."
                     class="btn btn-default">
-                    Save and Close
+                    Create and Close
                 </button>
-                <button
-                    type="button"
-                    class="oc-icon-trash-o btn-icon danger pull-right"
-                    data-request="onDelete"
-                    data-load-indicator="Deleting Subject..."
-                    data-request-confirm="Delete this subject?">
-                </button>
+
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('khalil/elearning/subjects') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('khalil/elearning/media') ?>">Cancel</a>
                 </span>
+
             </div>
         </div>
 
@@ -51,6 +47,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('khalil/elearning/subjects') ?>" class="btn btn-default">Return to subjects list</a></p>
+    <p><a href="<?= Backend::url('khalil/elearning/media') ?>" class="btn btn-default">Return to media list</a></p>
 
 <?php endif ?>

@@ -51,6 +51,12 @@ class Course extends Model
 
 
 
+
+  
+
+
+
+
     /** 
       *  Set Course Name Attribute
      */

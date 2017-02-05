@@ -12,6 +12,7 @@ class CreateMediaTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('path');
+            $table->string('type'); //this feild to explain media type
             $table->timestamps();
 
 

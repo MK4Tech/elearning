@@ -26,12 +26,18 @@ class Lesson extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [];
+    public $hasMany = [
+      'media' => ['khalil\Elearning\Models\Media']       
+    ];
+    public $belongsTo = [
+      'topic' => ['khalil\Elearning\Models\Topic']
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
+    public $attachOne = [
+       
+    ];
     public $attachMany = [];
 }

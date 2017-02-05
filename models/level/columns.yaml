@@ -7,6 +7,6 @@ columns:
         label: ID
         searchable: true
     name:
-        lable: Name
+        label: Name
         type: text
         searchable: true

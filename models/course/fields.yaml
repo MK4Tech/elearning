@@ -7,7 +7,7 @@ fields:
     level:
         label:    'Select Level:'        
         type:     recordfinder
-        list:     $/khalil/elearning/models/level/columns.yaml
+        list:     $/khalil/elearning/models/level/columns.yaml 
         prompt:   Click the %s to find the level.
         nameFrom: name   
         required: true
@@ -42,26 +42,12 @@ fields:
 
     description:
         label:  'Description:'
-        type :  richeditor 
+        type :   richeditor    
 
-    # topics:
-    #     type: repeater
-    #     label: 'Add Topics:'
-    #     form:
-    #          fields:
-    #                 title:
-    #                     label: 'Topic Title:'
-    #                     type: text
-    #                 name:
-    #                     label: 'Topic Name:'
-    #                     type: text
-
-
-    # topics:                  
-    #    label: Topics
-    #    type:  partail
-    #    path:  fields_topics
-    #    tape:  Topics
+    topic:                  
+       label: Topics
+       type:  partial
+       path:  $/khalil/elearning/controllers/courses/fields_topics.html                       
 
 
     publish:

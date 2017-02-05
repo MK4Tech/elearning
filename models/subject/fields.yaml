@@ -21,7 +21,8 @@ fields:
 
     hasParent:
         label: 'Has Parent'
-        type:   boolean
+        type: checkbox
+        default: false
 
         
 

@@ -1,0 +1,13 @@
+# relation behavior config
+media:
+    label: media
+    view:
+        list: $/khalil/elearning/models/media/columns.yaml        
+        form: $/khalil/elearning/models/media/fields.yaml
+        toolbarButtons: create|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10        
+        list: $/khalil/elearning/models/media/columns.yaml        
+        form: $/khalil/elearning/models/media/fields.yaml
+

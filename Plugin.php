@@ -108,7 +108,14 @@ class Plugin extends PluginBase
                                   'icon'  => 'icon-copy',
                                   'url'   => Backend::url('khalil/elearning/subjects'),
                                   'permissions' => ['khalil.elearning.*']  
-                           ],                
+                           ],
+                            'lessons' => [
+                                  'label' => 'Lessons',
+                                  'icon'  => 'icon-copy',
+                                  'url'   => Backend::url('khalil/elearning/lessons'),
+                                  'permissions' => ['khalil.elearning.*']  
+                           ],                                
+                                 
      
              ] 
          ],       

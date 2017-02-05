@@ -26,8 +26,12 @@ class Topic extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [];
+    public $hasMany = [
+       'lessons' => ['Khalil/Elearning/Models/Level']
+    ];
+    public $belongsTo = [
+       'course' => ['Khalil/Elearning/Models/course']
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

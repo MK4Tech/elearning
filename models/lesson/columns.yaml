@@ -3,6 +3,17 @@
 # ===================================
 
 columns:
+  
     id:
-        label: ID
-        searchable: true
+      label: ID
+      searchable: true
+
+    name: 
+      lebel: Name
+      searchable: true
+
+    watched:
+      label: Watched
+
+      
+
