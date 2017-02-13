@@ -62,31 +62,28 @@ class LessonsList extends ComponentBase
   
   public function levels()
   {    
+    
      $levels = Level::orderBy("name")->get();
-
-
-     return $levels->lists("name");
+     return $levels;
   }
 
-  public function subjects()
-  {
-      $subjects = Level::find(1)->subjects()->orderBy('name')->get();       
-    // $subjects = Db::table('khalil_elearning_subjects')
-    // ->join('khalil_elearning_courses',
-    //         'khalil_elearning_subjects.id',
-    //          '=',
-    //         'khalil_elearning_courses.subject_id')
-    // ->join('khalil_elearning_levels',
-    //         'khalil_elearning_courses.level_id', 
-    //         '=',
-    //          'khalil_elearning_levels.id')
-    // ->select('khalil_elearning_subjects.name')
-    // ->get();    
+  // public function subjects()
+  // {
+  //    $subjects = Level::find(1)->subjects()->orderBy('name')->get();       
+  //   $subjects = Db::table('khalil_elearning_subjects')
+  //   ->join('khalil_elearning_courses',
+  //           'khalil_elearning_subjects.id',
+  //            '=',
+  //           'khalil_elearning_courses.subject_id')
+  //   ->join('khalil_elearning_levels',
+  //           'khalil_elearning_courses.level_id', 
+  //           '=',
+  //            'khalil_elearning_levels.id')
+  //   ->select('khalil_elearning_subjects.name')
+  //   ->get();    
 
-    return $subjects;
-
-
-  }
+  //   return $subjects;
+  // }
 
   //  private function getSubjectsPerLevel($id) {
   //     return Level::find($id)->subjects;
