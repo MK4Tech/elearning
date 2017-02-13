@@ -30,7 +30,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
+      
     }
 
     /**
@@ -51,7 +51,9 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
        
-
+         return [
+          'Khalil\Elearning\Components\LessonsList' => 'lessonsList',
+          ];
         // return [
         //     'Khalil\Elearning\Components\MyComponent' => 'myComponent',
         // ];

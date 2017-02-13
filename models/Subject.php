@@ -31,7 +31,11 @@ class Subject extends Model
 //             // each subject belongs to one parent
 //            'subjectParent' => ['Khalil\Elearning\Modules\subject_parent'];     
     ];
-    public $belongsToMany = [ 'level' => ['Khalil\Elearning\Models\level']   ];    
+    public $belongsToMany = [ 
+
+         'level' => ['Khalil\Elearning\Models\level']   
+
+         ];    
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

@@ -34,12 +34,12 @@ class Level extends Model
     public $belongsTo = [];
     public $belongsToMany = [
 
-                // 'subject' => [
-                //          'Khalil\Elearning\Models\subject', 
-                //          'table' => 'khalil_elearning_courses',
-                //          'key'      => 'level_id',
-                //          'otherKey' => 'subject_id'
-                //          ]
+          'subjects' =>  [
+                'Khalil\Elearning\Models\Subject',
+                'table'     => 'khalil_elearning_courses',
+                'key'       => 'level_id',
+                'otherKey'  => 'subject_id'
+                ]
             ];
 
     public $morphTo = [];

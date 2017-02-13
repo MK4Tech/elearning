@@ -17,7 +17,7 @@ columns:
 
     publish: 
        lable: Publish
-       type:  boolean    
+       type: switch
         
     
 
