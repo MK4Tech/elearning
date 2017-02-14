@@ -36,57 +36,60 @@ class LessonsList extends ComponentBase
 
 
 
-   // private function applyFilters()
-   //  {
-   //      if (\Request::has('subject')) {
-   //          $entityTerm = \Request::get('series');
-   //          $entity = Series::where('name', 'like', $entityTerm)->first();
-   //          if ($entity)
-   //              $this->booksQ->where("series_id", $entity->id);
+   private function applyFilters()
+    {
+            $subjectEntityTerm = \Request::get('subject');
+            $levelEntityTerm   = \Request::get('level');   
+            $levelEntity   = level::where('name', 'like', $levelEntityTerm )->first();
+            $subjectEntity = subject::where('name', 'like', $levelEntityTerm)->first();
+            
 
-   //      }elseif(\Request::has('level')){
-   //          $entityTerm = \Request::get('level');
-   //          $entity = Level::where('name', 'like', $entityTerm)->first();
-   //          if ($entity)
-   //              $this->booksQ->where("level_id", $entity->id);
-   //      }
+            // get the course depends on subject & level
+            if ($levelEntity)
+            {
+                if($subjectEntity)
+                $this->$courseQ->where("level_id", $levelEntity->id)
+                               ->where("subject_id", $subjectEntity->id);
+            }            
+      
 
-   //  }   
+    }
  
 
  
-  public function courese()
+  public function course()
   {
+      $result;
+      $courseQ = Course::all();
+      
+      if (\Request::has('level') && \Request::has('subject')) 
+      {
+         $this->applyFilters();
+         $result = $courseQ;          
 
-  }
+      }else
+      {
+          $courseQ = Course::find(2);
+          $result = $courseQ;
+      }
+
+      
+
+        return $result;
+  }   
+
+
+      
+
+  
   
   public function levels()
   {    
-    
+
      $levels = Level::orderBy("name")->get();
      return $levels;
   }
 
-  // public function subjects()
-  // {
-  //    $subjects = Level::find(1)->subjects()->orderBy('name')->get();       
-  //   $subjects = Db::table('khalil_elearning_subjects')
-  //   ->join('khalil_elearning_courses',
-  //           'khalil_elearning_subjects.id',
-  //            '=',
-  //           'khalil_elearning_courses.subject_id')
-  //   ->join('khalil_elearning_levels',
-  //           'khalil_elearning_courses.level_id', 
-  //           '=',
-  //            'khalil_elearning_levels.id')
-  //   ->select('khalil_elearning_subjects.name')
-  //   ->get();    
-
-  //   return $subjects;
-  // }
-
-  //  private function getSubjectsPerLevel($id) {
-  //     return Level::find($id)->subjects;
-  //  }
-
+  
+  
 }
