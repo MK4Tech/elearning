@@ -41,47 +41,41 @@ class LessonsList extends ComponentBase
             $subjectEntityTerm = \Request::get('subject');
             $levelEntityTerm   = \Request::get('level');   
             $levelEntity   = level::where('name', 'like', $levelEntityTerm )->first();
-            $subjectEntity = subject::where('name', 'like', $levelEntityTerm)->first();
+            $subjectEntity = subject::where('name', 'like', $subjectEntityTerm)->first();
             
 
             // get the course depends on subject & level
             if ($levelEntity)
             {
                 if($subjectEntity)
-                $this->$courseQ->where("level_id", $levelEntity->id)
-                               ->where("subject_id", $subjectEntity->id);
+                $this->courseQ->where("level_id", $levelEntity->id)
+                               ->where("subject_id", $subjectEntity->id)->first();
             }            
       
 
     }
  
-
+  public function init()
+  {
+     $this->courseQ = Course::all();    
+  }
  
   public function course()
   {
-      $result;
-      $courseQ = Course::all();
-      
+      global $courseQ;
+      $result;    
+
       if (\Request::has('level') && \Request::has('subject')) 
       {
          $this->applyFilters();
-         $result = $courseQ;          
-
-      }else
-      {
-          $courseQ = Course::find(2);
-          $result = $courseQ;
+         $result = $courseQ;
+      }
+      else{
+         $result = $courseQ->find(1);
       }
 
-      
-
-        return $result;
-  }   
-
-
-      
-
-  
+      return $result;
+  }
   
   public function levels()
   {    
