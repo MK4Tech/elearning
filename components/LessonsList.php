@@ -43,35 +43,37 @@ class LessonsList extends ComponentBase
             $levelEntity   = level::where('name', 'like', $levelEntityTerm )->first();
             $subjectEntity = subject::where('name', 'like', $subjectEntityTerm)->first();
             
-
+            $q = $this.courseQ;
             // get the course depends on subject & level
-            if ($levelEntity)
+            if ($levelEntity and $subjectEntity)
             {
-                if($subjectEntity)
-                $this->courseQ->where("level_id", $levelEntity->id)
-                               ->where("subject_id", $subjectEntity->id)->first();
-            }            
+                $q->where("level_id", $levelEntity->id)
+                               ->where("subject_id", $subjectEntity->id);
+            }
+            
+            return $q;
       
 
     }
  
   public function init()
   {
-     $this->courseQ = Course::all();    
+     $this->courseQ = Course::with(array());  // this wont retun a query object :) , this will return a collection of all courses tamam :)???  
   }
  
   public function course()
   {
-      global $courseQ;
-      $result;    
+       
+      $result;
 
       if (\Request::has('level') && \Request::has('subject')) 
       {
-         $this->applyFilters();
-         $result = $courseQ;
+         $q = $this->applyFilters();
+         $result = $q->first();
+         
       }
       else{
-         $result = $courseQ->find(1);
+         $result = $thi->courseQ->find(1);
       }
 
       return $result;
