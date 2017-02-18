@@ -43,7 +43,7 @@ class LessonsList extends ComponentBase
             $levelEntity   = level::where('name', 'like', $levelEntityTerm )->first();
             $subjectEntity = subject::where('name', 'like', $subjectEntityTerm)->first();
             
-            $q = $this.courseQ;
+            $q = $this->courseQ;
             // get the course depends on subject & level
             if ($levelEntity and $subjectEntity)
             {
@@ -73,7 +73,7 @@ class LessonsList extends ComponentBase
          
       }
       else{
-         $result = $thi->courseQ->find(1);
+         $result = $this->courseQ->find(1);
       }
 
       return $result;
